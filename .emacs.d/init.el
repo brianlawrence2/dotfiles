@@ -114,4 +114,5 @@
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
 (setq org-agenda-files (list "~/Dropbox/org/work.org"
-			     "~/Dropbox/org/home.org"))
+			     "~/Dropbox/org/home.org"
+			     "~/Dropbox/org/ideas.org"))
