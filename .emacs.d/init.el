@@ -16,6 +16,7 @@
 (require 'whitespace)
 (require 'dired-x)
 (require 'compile)
+(require 'org-install)
 (ido-mode t)
 (menu-bar-mode -1)
 (normal-erase-is-backspace-mode 1)
@@ -66,6 +67,8 @@
 (global-set-key "\M-h" 'backward-delete-word)
 (global-set-key "\M-u" 'zap-to-char)
 (global-set-key "\C-h" 'delete-backward-char)
+(global-set-key "\C-c\M-t" 'org-todo)
+(global-set-key "\C-c\C-o" 'org-open-at-point)
 
 ;; ---------------------------
 ;; -- JS Mode configuration --
@@ -101,3 +104,14 @@
 (add-hook 'yaml-mode-hook
 	  '(lambda ()
 	     (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
+
+
+;;------------
+;;--Org Mode--
+;;------------
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+(setq org-agenda-files (list "~/Dropbox/org/work.org"
+			     "~/Dropbox/org/home.org"))
